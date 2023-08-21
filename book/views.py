@@ -4,7 +4,7 @@ from .models import Contact
 import datetime
 
 
-def test(request):
+def home(request):
     date = datetime.datetime.now()
     return HttpResponse("Hello, world. You're at the polls index.  <br>" + str(date))
 # Create your views here.
