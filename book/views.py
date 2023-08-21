@@ -6,12 +6,15 @@ import datetime
 
 def home(request):
     date = datetime.datetime.now()
-    return HttpResponse("Hello, world. You're at the polls index.  <br>" + str(date))
+    print(("Hello, world. You're at the polls index.  <br>" + str(date)))
+    return render(request,"home.html",{})
 # Create your views here.
 
 
 def about(request):
-    return HttpResponse("<h1>This is about page</h1>")
+    print=("<h1>This is about page</h1>")
+    return render(request,"about.html",{})
 
 def services(request):
-    return HttpResponse("<h1>This is services page</h1>")
+    print=("<h1>This is services page</h1>")
+    return render(request,"services.html",{})
