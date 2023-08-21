@@ -6,8 +6,29 @@ import datetime
 
 def home(request):
     date = datetime.datetime.now()
-    print(("Hello, world. You're at the polls index.  <br>" + str(date)))
-    return render(request,"home.html",{})
+    isActive=True
+    name="Daya"
+    list_of_subjects=[
+        'Maths',
+        'Science',
+        'Biology',
+        'History',
+        'Genaral Knowledge'
+    ]
+    student={
+        'student_name' : "daya",
+        'student_college': "xyz", 
+        'student_city':"köln"
+    }
+
+    data={
+        'date':date,
+        'isActive':isActive,
+        'name':name,
+        'list_of_subjects': list_of_subjects,
+        'student_data':student
+    }    
+    return render(request,"home.html",data)
 # Create your views here.
 
 
