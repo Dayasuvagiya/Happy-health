@@ -20,32 +20,60 @@
                 {% csrf_token %}
                 <div class="mb-3">
                   <label for="name">Employee Name</label>
-                  <input id="name" type="text" class="form-control" placeholder="Enter employee name">
+                  <input 
+                    id="name"
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Enter employee name"
+                    name="employee_name"
+                  />
                 </div>
 
                 <div class="mb-3">
                   <label for="id">Employee ID</label>
-                  <input id="id" type="text" class="form-control" placeholder="Enter employee Id">
+                  <input 
+                    id="id" 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Enter employee Id"
+                    name="employee_id"
+                  />
                 </div>
 
                 <div class="mb-3">
                   <label for="phone">Phone</label>
-                  <input id="phone" type="text" class="form-control" placeholder="Enter employee Phone">
+                  <input 
+                    id="phone" 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Enter employee Phone"
+                    name="employee-phone"
+                  />
                 </div>
 
                 <div class="mb-3">
                   <label for="address">Employee Address</label>
-                  <textarea name="address" id="address" rows="5" class="form-control"></textarea>
+                  <textarea 
+                    name="employee_address" 
+                    id="address" 
+                    rows="5" 
+                    class="form-control">
+                  </textarea>
                 </div>
 
                 <div class="mb-3 form-check">
                   <label for="work">Working</label>
-                  <input type="checkbox" id="work" class="form-check-input">
+                  <input 
+                    type="checkbox" 
+                    id="work" 
+                    class="form-check-input"
+                    name="employee_working"
+                  />
                 </div>
 
                 <div class="mb-3">
                   <label for="department">Departments</label>
-                  <select name="department" id="department" class="form-control">
+                  <select name="employee_department" id="department" class="form-control">
                     <option value="se">Software Development</option>
                     <option value="hr">HR Manager</option>
                     <option value="dm">Digital Marketing</option>
