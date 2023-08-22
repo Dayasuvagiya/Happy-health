@@ -20,7 +20,7 @@ def add_employe(request):
         employee_working=request.POST.get("employee_working")
         employee_department=request.POST.get("employee_department")
         print("phone", employee_phone, request)
-        
+
         # Create model object and set data
         e=Emp()
         e.name=employee_name
@@ -41,3 +41,9 @@ def add_employe(request):
 
         return redirect("/employe/home/")
     return render(request, "employe/add_employe.html",{})
+
+
+def delete_employe(request,employe_id):
+    employe=Emp.objects.get(pk=employe_id)
+    employe.delete()
+    return redirect("/employe/home/")
