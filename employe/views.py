@@ -4,7 +4,11 @@ from .models import Emp
 
 # Create your views here.
 def employe_home(request):
-    return render(request, "employe/home.html",{})
+
+    emps=Emp.objects.all()
+    return render(request, "employe/home.html",{
+        'emps':emps
+    })
 
 def add_employe(request):
     if request.method=="POST":
@@ -16,10 +20,11 @@ def add_employe(request):
         employee_working=request.POST.get("employee_working")
         employee_department=request.POST.get("employee_department")
         print("phone", employee_phone, request)
+        
         # Create model object and set data
         e=Emp()
         e.name=employee_name
-        e.employee_id=employee_id
+        e.emp_id=employee_id
         e.phone=employee_phone
         e.address=employee_address
         e.department=employee_department

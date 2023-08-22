@@ -10,7 +10,49 @@
 
     {% include 'employe/navbar.html' %}
 
-    <h1>Employee Management</h1>
+    <h1 class="text-center my-3">Employee Management</h1>
+    <h1 class="text-center my-3">List of employee</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#SNO.</th>
+                                    <th>Name</th>
+                                    <th>EMP ID</th>
+                                    <th>PHONE</th>
+                                    <th>WORKING</th>
+                                    <th>DEPARTMENT</th>
+                                    <th>ADDRESS</th>
+                                    <th>ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for e in emps %}
+                                <tr>
+                                    <td>{{e.id}}</td>
+                                    <td>{{e.name}}</td>
+                                    <td>{{e.emp_id}}</td>
+                                    <td>{{e.phone}}</td>
+                                    <td>{{e.working}}</td>
+                                    <td>{{e.department}}</td>
+                                    <td>{{e.address}}</td>
+                                    <td>
+                                        <button class="btn btn-danger btn-sm">Delete</button>
+                                        <button class="btn btn-warning btn-sm">Update</button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>
 </html>
