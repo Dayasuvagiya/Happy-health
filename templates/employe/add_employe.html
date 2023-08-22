@@ -14,11 +14,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 offset-md-3">
-
           <div class="card bg-light">
             <div class="card-body">
-
-              <form action="">
+              <form action="/employe/add-employe/" method="POST">
+                {% csrf_token %}
                 <div class="mb-3">
                   <label for="name">Employee Name</label>
                   <input id="name" type="text" class="form-control" placeholder="Enter employee name">
@@ -55,13 +54,9 @@
                 <div class="container text-center">
                   <button class="btn btn-success">Add Employee</button>
                 </div>
-
               </form>
-
-
             </div>
           </div>
-
         </div>
       </div>
     </div>
