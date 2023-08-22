@@ -4,4 +4,5 @@ from employe import views
 
 urlpatterns = [
     path("home/", views.employe_home, name="home"),
+    path("add-employe/", views.add_employe, name="employe"),
 ]
