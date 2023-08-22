@@ -1,12 +1,19 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Contact
+from .models import Student
 import datetime
 
 
 def home(request):
-    date = datetime.datetime.now()
     isActive=True
+    if request.method=='POST':
+        check=request.POST.get("check")
+        print(check)
+        if check is None: isActive=False
+        else: isActive=True
+
+    date = datetime.datetime.now()
+    
     name="Daya"
     list_of_subjects=[
         'Maths',
