@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from .models import Emp
 
 # Create your views here.
 def employe_home(request):
@@ -14,10 +15,21 @@ def add_employe(request):
         employee_address=request.POST.get("employee_address")
         employee_working=request.POST.get("employee_working")
         employee_department=request.POST.get("employee_department")
-
+        print("phone", employee_phone, request)
         # Create model object and set data
+        e=Emp()
+        e.name=employee_name
+        e.employee_id=employee_id
+        e.phone=employee_phone
+        e.address=employee_address
+        e.department=employee_department
+        if employee_working is None:
+            e.working=False
+        else:
+            e.working=True
 
         # Save the object
+        e.save()
 
         # Prepare msg
 
