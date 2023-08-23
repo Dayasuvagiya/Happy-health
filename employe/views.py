@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Emp
+from .form import ContactForm
 
 # Create your views here.
 def employe_home(request):
@@ -76,3 +77,16 @@ def do_update_emp(request,employe_id):
         e.save()
 
     return redirect("/employe/home/")
+
+
+def contact(request):
+    if request.method=='POST':
+        form=ContactForm(request.POST)
+        if form.is_valid():
+            pass
+        else:
+            return render(request, "employe/contact.html",{'form':form})
+        
+    else:
+        form=ContactForm()
+    return render(request, "employe/contact.html",{'form':form})
