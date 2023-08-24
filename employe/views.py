@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .models import Emp
 from .form import ContactForm
 
-# Create your views here.
+# employee home page view
 def employe_home(request):
 
     emps=Emp.objects.all()
@@ -42,19 +42,19 @@ def add_employe(request):
         return redirect("/employe/home/")
     return render(request, "employe/add_employe.html",{})
 
-
+# Delete employe view
 def delete_employe(request,employe_id):
     employe=Emp.objects.get(pk=employe_id)
     employe.delete()
     return redirect("/employe/home/")
 
-
+# Update employe view
 def update_employe(request,employe_id):
     employe=Emp.objects.get(pk=employe_id)
     return render(request,"employe/update_employe.html",{
         'employe':employe
     })
-
+# Data Fetch for update employee
 def do_update_emp(request,employe_id):
     if request.method=='POST':
         employee_name=request.POST.get("employee_name")
@@ -63,7 +63,7 @@ def do_update_emp(request,employe_id):
         employee_address=request.POST.get("employee_address")
         employee_working=request.POST.get("employee_working")
         employee_department=request.POST.get("employee_department")
-
+# Model object and set data for update 
         e=Emp.objects.get(pk=employe_id)
         e.name=employee_name
         e.emp_id=employee_id_temp
@@ -78,7 +78,7 @@ def do_update_emp(request,employe_id):
 
     return redirect("/employe/home/")
 
-
+# Contact view
 def contact(request):
     if request.method=='POST':
         form=ContactForm(request.POST)
@@ -90,3 +90,16 @@ def contact(request):
     else:
         form=ContactForm()
     return render(request, "employe/contact.html",{'form':form})
+
+
+# Contact view
+def loginUser(request):
+    
+    return render(request, "auth/logintest.html",{'form':'helo'})
+
+def registerUser(request):
+    
+    return render(request, "auth/register.html",{'form':'helo'})
+
+
+
