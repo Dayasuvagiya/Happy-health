@@ -30,5 +30,6 @@ urlpatterns = [
     path("employe/", include('employe.urls')),
     path("login/", loginUser, name="loginUser"),
     path("register/", registerUser, name="registerUser"),
-
 ]
+
+

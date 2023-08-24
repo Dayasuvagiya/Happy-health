@@ -98,7 +98,8 @@ def loginUser(request):
     return render(request, "auth/logintest.html",{'form':'helo'})
 
 def registerUser(request):
-    
+    if request.method=='POST':
+        return redirect("/login/")
     return render(request, "auth/register.html",{'form':'helo'})
 
 
