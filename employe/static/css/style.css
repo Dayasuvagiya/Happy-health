@@ -97,3 +97,14 @@ p {
 #position{
     font-size: 0.7rem;
 }
+
+/* Navbar */
+
+.nav-button{
+    margin-right: 10px;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+}
