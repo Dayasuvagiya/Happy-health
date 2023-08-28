@@ -1,10 +1,19 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Emp
+from .models import Emp,Userlogin
 from .form import ContactForm
 
 # employee home page view
 def employe_home(request):
+
+    if 'userId' in request.session:
+        userId = request.session['userId']
+    else:
+        return redirect("/login/")
+    
+    user = Userlogin.objects.get(id=userId)
+    if user.islogin is False:
+        return redirect("/login/")
 
     emps=Emp.objects.all()
     return render(request, "employe/home.html",{
@@ -12,6 +21,16 @@ def employe_home(request):
     })
 
 def add_employe(request):
+
+    if 'userId' in request.session:
+        userId = request.session['userId']
+    else:
+        return redirect("/login/")
+    
+    user = Userlogin.objects.get(id=userId)
+    if user.islogin is False:
+        return redirect("/login/")
+
     if request.method=="POST":
         # Data Fetch
         employee_name=request.POST.get("employee_name")
@@ -44,18 +63,47 @@ def add_employe(request):
 
 # Delete employe view
 def delete_employe(request,employe_id):
+
+    if 'userId' in request.session:
+        userId = request.session['userId']
+    else:
+        return redirect("/login/")
+    
+    user = Userlogin.objects.get(id=userId)
+    if user.islogin is False:
+        return redirect("/login/")
+    
     employe=Emp.objects.get(pk=employe_id)
     employe.delete()
     return redirect("/employe/home/")
 
 # Update employe view
 def update_employe(request,employe_id):
+
+    if 'userId' in request.session:
+        userId = request.session['userId']
+    else:
+        return redirect("/login/")
+    
+    user = Userlogin.objects.get(id=userId)
+    if user.islogin is False:
+        return redirect("/login/")
+
     employe=Emp.objects.get(pk=employe_id)
     return render(request,"employe/update_employe.html",{
         'employe':employe
     })
 # Data Fetch for update employee
 def do_update_emp(request,employe_id):
+    if 'userId' in request.session:
+        userId = request.session['userId']
+    else:
+        return redirect("/login/")
+    
+    user = Userlogin.objects.get(id=userId)
+    if user.islogin is False:
+        return redirect("/login/")
+    
     if request.method=='POST':
         employee_name=request.POST.get("employee_name")
         employee_id_temp=request.POST.get("employee_id")
@@ -80,6 +128,16 @@ def do_update_emp(request,employe_id):
 
 # Contact view
 def contact(request):
+
+    if 'userId' in request.session:
+        userId = request.session['userId']
+    else:
+        return redirect("/login/")
+    
+    user = Userlogin.objects.get(id=userId)
+    if user.islogin is False:
+        return redirect("/login/")
+    
     if request.method=='POST':
         form=ContactForm(request.POST)
         if form.is_valid():
@@ -92,15 +150,48 @@ def contact(request):
     return render(request, "employe/contact.html",{'form':form})
 
 
-# Contact view
+# Login View
 def loginUser(request):
-    
+    if request.method=='POST':
+        username=request.POST.get("username")
+        password=request.POST.get("password")
+        print("===========login======")
+        userQuerySet = Userlogin.objects.filter(username=username).filter(password=password)
+        print(userQuerySet)
+        if len(userQuerySet) > 0:  
+            for user in userQuerySet:
+                user.islogin = True
+                user.save()
+                request.session['userId'] = user.id
+            return redirect("/employe/home/")
+    #return redirect("/register/")
     return render(request, "auth/logintest.html",{'form':'helo'})
 
+# User Registration
 def registerUser(request):
     if request.method=='POST':
+        username=request.POST.get("username")
+        password=request.POST.get("password")
+        email=request.POST.get("email")
+        
+        user=Userlogin()
+        user.username=username
+        user.password=password
+        user.email=email
+        user.islogin = False
+
+        # Save the object
+        user.save()
         return redirect("/login/")
+    
     return render(request, "auth/register.html",{'form':'helo'})
 
-
-
+def logoutUser(request):   
+    if 'userId' in request.session:
+        userId = request.session['userId']
+        user = Userlogin.objects.get(id=userId)
+        user.islogin = False
+        user.save()
+        del request.session['userId']
+    return redirect("/login/")
+    

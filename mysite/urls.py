@@ -18,7 +18,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from book import views
-from employe.views import loginUser, registerUser
+from employe.views import loginUser, registerUser, logoutUser
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -30,6 +30,7 @@ urlpatterns = [
     path("employe/", include('employe.urls')),
     path("login/", loginUser, name="loginUser"),
     path("register/", registerUser, name="registerUser"),
+    path("logout/", logoutUser, name="logoutUser"),
 ]
 
 
