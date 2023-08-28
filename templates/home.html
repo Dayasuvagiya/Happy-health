@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +13,10 @@
         
         {% include 'navbar.html' %}
     <div class="container">
+        <img src="./../templates/test.jpg" alt="Girl in a jacket" width="500" height="600">
+
         <div class="col">
-            <img src="/static/images/main_page.jpeg/" class="img-fluid" alt="home-page">
+            <img src="{% static 'images/test.jpg' %}" class="img-fluid" alt="home-page"> 
         </div>
     </div>
         {% include 'footer.html' %}
