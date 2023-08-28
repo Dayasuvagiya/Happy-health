@@ -195,3 +195,25 @@ def logoutUser(request):
         del request.session['userId']
     return redirect("/login/")
     
+
+
+
+# Index page view
+
+def home(request):
+    isActive=True
+    if request.method=='POST':
+        check=request.POST.get("check")
+        print(check)
+        if check is None: isActive=False
+        else: isActive=True
+    return render(request,"home.html",{})
+
+
+def about(request):
+    print=("<h1>This is about page</h1>")
+    return render(request,"about.html",{})
+
+def services(request):
+    print=("<h1>This is services page</h1>")
+    return render(request,"services.html",{})
