@@ -186,6 +186,7 @@ def registerUser(request):
     
     return render(request, "auth/register.html",{'form':'helo'})
 
+#logout
 def logoutUser(request):   
     if 'userId' in request.session:
         userId = request.session['userId']
@@ -210,10 +211,9 @@ def home(request):
     return render(request,"home.html",{})
 
 
+# About page view
 def about(request):
     print=("<h1>This is about page</h1>")
     return render(request,"about.html",{})
 
-def services(request):
-    print=("<h1>This is services page</h1>")
-    return render(request,"services.html",{})
+
