@@ -1,1 +1,1 @@
-web: gunicorn kyros-emp-mgt.wsgi
+web: gunicorn mysite.wsgi
