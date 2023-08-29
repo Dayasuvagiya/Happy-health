@@ -151,3 +151,7 @@ i{
 .login-heading{
     font-weight: 800;
 }
+
+.login-title{
+    letter-spacing: 1px;
+}
