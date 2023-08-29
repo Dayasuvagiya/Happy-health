@@ -98,7 +98,7 @@ p {
     font-size: 0.7rem;
 }
 
-/* Navbar */
+/* Main Navbar */
 
 .nav-button{
     margin-right: 10px;
@@ -107,4 +107,37 @@ p {
 .link{
     text-decoration: none;
     color: black;
+}
+
+/* Main Footer */
+
+.footer-follow{
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+i{
+    font-size: 35px;
+}
+
+.copyright{
+    font-size: 10px;
+}
+
+.credits{
+    font-size: 10px;
+}
+
+
+.image-custom{
+    width: 80%;
+    height: 80%;
+}
+
+.custom{
+    text-align: center;
+}
+
+.custom-container{
+    height: 450px;
 }
