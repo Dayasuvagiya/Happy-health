@@ -139,5 +139,15 @@ i{
 }
 
 .custom-container{
-    height: 450px;
+    height: 100%;
+}
+
+/* login page */
+
+.container-login{
+    background: transparent;
+}
+
+.login-heading{
+    font-weight: 800;
 }
