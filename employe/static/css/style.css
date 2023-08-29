@@ -155,3 +155,10 @@ i{
 .login-title{
     letter-spacing: 1px;
 }
+
+/* logout button */
+
+.logout-button{
+    text-decoration: none;
+    color: black;
+}
