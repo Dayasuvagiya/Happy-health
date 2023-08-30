@@ -150,8 +150,12 @@ BASE_URL = 'http://localhost:8000/'
 
 
 MIDDLEWARE = [
-    # ...
+    
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
-    # ...
+    'django.contrib.sessions.middleware.SessionMiddleware',  
+    'django.contrib.auth.middleware.AuthenticationMiddleware',  
+    'django.contrib.messages.middleware.MessageMiddleware', 
+    
 ]
+
