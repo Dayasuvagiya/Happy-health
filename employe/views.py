@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Emp,Userlogin
+from .models import Emp,Userlogin,Contactus
 from .form import ContactForm
 
 # employee home page view
@@ -138,12 +138,20 @@ def contact(request):
     if user.islogin is False:
         return redirect("/login/")
     
+
     if request.method=='POST':
-        form=ContactForm(request.POST)
-        if form.is_valid():
-            pass
-        else:
-            return render(request, "employe/contact.html",{'form':form})
+        name=request.POST.get("name")
+        email=request.POST.get("email")
+        message=request.POST.get("message")
+
+        print(name)
+        contact=Contactus()
+        contact.name = name
+        contact.email = email
+        contact.message = message
+
+        contact.save()
+        return redirect("/employe/home/")
         
     else:
         form=ContactForm()
