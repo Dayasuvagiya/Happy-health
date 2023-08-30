@@ -16,7 +16,7 @@ def employe_home(request):
         return redirect("/login/")
 
     emps=Emp.objects.all()
-    return render(request, "employe/home.html",{
+    return render(request, "employe/home_emp.html",{
         'emps':emps
     })
 
