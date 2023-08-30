@@ -128,6 +128,7 @@ i{
     font-size: 10px;
 }
 
+/* Home page */
 
 .image-custom{
     width: 80%;
@@ -180,5 +181,6 @@ i{
 }
 
 .mycolor{
-    color: red;
+    color: black;
+    
 }
