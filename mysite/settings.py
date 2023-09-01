@@ -78,37 +78,11 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
-
-
-#DATABASES = {
-#     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-# }
 
 DATABASES = {
      'default': dj_database_url.parse("postgres://fhwakklu:gM9Vy9ln50m5ZyjRhE7SyWpnWy_LJ1rW@balarama.db.elephantsql.com/fhwakklu")
  }
 
-#DATABASES = {
-#   'default': {
-#       'ENGINE': 'django.db.backends.postgresql',
-#       'NAME': 'django_test',
-#       'USER': 'jaldipsuvagiya',
-#       'PASSWORD': 'root',
-#       'HOST': 'localhost',
-#       'PORT': '5432',
-#   }
-#}
-
-# Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
