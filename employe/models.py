@@ -4,7 +4,7 @@ from django.db import models
 class Emp(models.Model):
     name=models.CharField(max_length=200)
     emp_id=models.CharField(max_length=200)
-    phone=models.CharField(max_length=20)
+    phone=models.BigIntegerField()
     address=models.CharField(max_length=200)
     working=models.BooleanField(default=True)
     department=models.CharField(max_length=20)
@@ -17,7 +17,7 @@ class Emp(models.Model):
 class Userlogin(models.Model):
     username=models.CharField(max_length=200)
     password=models.CharField(max_length=200)
-    email=models.CharField(max_length=20)
+    email=models.EmailField(blank=False)
     islogin=models.CharField(max_length=200)
 
     def __str__(self):
@@ -26,7 +26,7 @@ class Userlogin(models.Model):
     # Create your models here.
 class Contactus(models.Model):
     name=models.CharField(max_length=200)
-    email=models.CharField(max_length=200)
+    email=models.EmailField(blank=False)
     message=models.CharField(max_length=20)
     
 
