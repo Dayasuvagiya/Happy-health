@@ -5,6 +5,23 @@ from .form import ContactForm
 from django.core.exceptions import PermissionDenied
 from django.contrib import messages
 
+
+# Index page view
+
+def index(request):
+    isActive=True
+    if request.method=='POST':
+        check=request.POST.get("check")
+        print(check)
+        if check is None: isActive=False
+        else: isActive=True
+    return render(request,"index.html",{})
+
+# About page view
+def about(request):
+    print=("<h1>This is about page</h1>")
+    return render(request,"about.html",{})
+
 # employee home page view
 def employe_home(request):
 
@@ -97,8 +114,10 @@ def update_employe(request,employe_id):
     return render(request,"employe/update_employe.html",{
         'employe':employe, 'isLogin': True
     })
+
 # Data Fetch for update employee
 def do_update_emp(request,employe_id):
+
     if 'userId' in request.session:
         userId = request.session['userId']
     else:
@@ -127,7 +146,7 @@ def do_update_emp(request,employe_id):
         else:
             e.working=True
         e.save()
-        messages.success(request, 'Successfully updated')
+        messages.success(request, 'Successfully Updated')
 
     return redirect("/employe/home/")
 
@@ -143,7 +162,6 @@ def contact(request):
     if user.islogin is False:
         return redirect("/login/")
     
-
     if request.method=='POST':
         name=request.POST.get("name")
         email=request.POST.get("email")
@@ -163,7 +181,6 @@ def contact(request):
         form=ContactForm()
     return render(request, "employe/contact.html",{'form':form, 'isLogin': True})
 
-
 # Login View
 def loginUser(request):
     if request.method=='POST':
@@ -180,7 +197,6 @@ def loginUser(request):
                 messages.success(request, 'You have logged in successfully')
 
             return redirect("/employe/home/")
-    #return redirect("/register/")
     return render(request, "auth/login.html",{'form':'helo'})
 
 # User Registration
@@ -210,33 +226,9 @@ def logoutUser(request):
         user.save()
         del request.session['userId']
         messages.warning(request, 'Logout Successful. See you next time!.')
-
     return redirect("/login/")
-    
 
-
-
-# Index page view
-
-def home(request):
-    isActive=True
-    if request.method=='POST':
-        check=request.POST.get("check")
-        print(check)
-        if check is None: isActive=False
-        else: isActive=True
-    return render(request,"home.html",{})
-
-
-# About page view
-def about(request):
-    print=("<h1>This is about page</h1>")
-    return render(request,"about.html",{})
-
-
-
-""" Error handling """
-
+# Error handling 
 
 def handler404(request, exception):
     """Function to render the 404 page."""
@@ -246,7 +238,6 @@ def handler404(request, exception):
 def handler500(request):
     """ Function to render the 500 page."""
     return render(request, '500.html', status=500)
-
 
 def handler403(request, exception):
     """Function to render the 403 page."""
