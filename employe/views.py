@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Emp,Userlogin,Contactus
 from .form import ContactForm
 from django.core.exceptions import PermissionDenied
+from django.contrib import messages
 
 # employee home page view
 def employe_home(request):
@@ -57,8 +58,7 @@ def add_employe(request):
         e.save()
 
         # Prepare msg
-
-
+        messages.success(request, 'You have added new employee successfully')
         return redirect("/employe/home/")
     return render(request, "employe/add_employe.html",{})
 
@@ -172,6 +172,8 @@ def loginUser(request):
                 user.islogin = True
                 user.save()
                 request.session['userId'] = user.id
+                messages.success(request, 'You have logged in successfully')
+
             return redirect("/employe/home/")
     #return redirect("/register/")
     return render(request, "auth/logintest.html",{'form':'helo'})
@@ -192,7 +194,6 @@ def registerUser(request):
         # Save the object
         user.save()
         return redirect("/login/")
-    
     return render(request, "auth/register.html",{'form':'helo'})
 
 #logout
@@ -203,6 +204,8 @@ def logoutUser(request):
         user.islogin = False
         user.save()
         del request.session['userId']
+        messages.warning(request, 'Successfully logout')
+
     return redirect("/login/")
     
 

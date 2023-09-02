@@ -13,7 +13,7 @@
             <a href="{% url 'home' %}" class="nav-link active text-white" aria-current="page"><!--</a><a class="nav-link active text-white" aria-current="page" href="/employe/home">-->Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="/about">About Us</a>
+            <a class="nav-link text-white" href="{% url 'about' %}">About Us</a>
           </li>
 
           {% if user.is_authenticated %}
@@ -64,18 +64,3 @@
 </nav> 
 {% endblock nav-bar %}
 
-<!-- ALERT SECTION -->
-<div id="alert-box">
-  <div class="container">
-      <div class="row">
-          <div class="col-md-8 offset-md-2 text-center">
-              {% for message in messages %}
-              <div class="alert {{ message.tags }} alert-dismissible fade show alert-success" id="alert" role="alert">
-                  {{ message | safe }}
-              </div>
-              {% endfor %}
-          </div>
-      </div>
-  </div>
-</div>
-<!-- END OF ALERT SECTION -->
