@@ -9,14 +9,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a href="{% url 'home' %}" class="nav-link active text-white" aria-current="page"><!--</a><a class="nav-link active text-white" aria-current="page" href="/employe/home">-->Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="{% url 'about' %}">About Us</a>
-          </li>
-
-          {% if user.is_authenticated %}
+  
+          {% if isLogin %}
           <li class="nav-item">
             <a class="nav-link text-white" href="/employe/add_employe">Add Employee</a>
           </li>
@@ -26,14 +20,21 @@
           <li>
             <a class="nav-link text-white" href="/employe/contact/">Conact us</a>
           </li>
+          {% else %}
+          <li class="nav-item">
+            </a><a class="nav-link active text-white" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'about' %}">About Us</a>
+          </li>
           {% endif %}
         </ul>
-
+        {% if isLogin %}
         <form class="d-flex" role="search">
           <!-- <button type="button" class="btn bg-white logout-button" onclick="location.href='/logout'"><a href="/logout">Log Out</a></button> -->
-          {% if user.is_authenticated %}
+          
           <button type="button" class="btn bg-white logout-button" data-bs-toggle="modal" data-bs-target="#logoutModal"><a>Log Out</a></button>
-          {% endif %}
+          
           <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -54,11 +55,13 @@
         </form>
 
         
+        {% else %}
 
         <form class="d-flex" role="search">
           <button type="button" class="btn text-dark bg-light nav-button" onclick="location.href='/login'"><a href="/login" class="link">LogIn</a></button>
           <button type="button" class="btn text-dark bg-light nav-button" onclick="location.href='/register'"><a href="/register" class="link">Register</a></button>
         </form>
+        {% endif %}
       </div>
     </div>
 </nav> 

@@ -19,7 +19,8 @@ def employe_home(request):
 
     emps=Emp.objects.all()
     return render(request, "employe/home_emp.html",{
-        'emps':emps
+        'emps':emps,
+        'isLogin': True
     })
 
 def add_employe(request):
@@ -60,7 +61,7 @@ def add_employe(request):
         # Prepare msg
         messages.success(request, 'You have added new employee successfully')
         return redirect("/employe/home/")
-    return render(request, "employe/add_employe.html",{})
+    return render(request, "employe/add_employe.html",{'isLogin': True})
 
 # Delete employe view
 def delete_employe(request,employe_id):
@@ -94,7 +95,7 @@ def update_employe(request,employe_id):
 
     employe=Emp.objects.get(pk=employe_id)
     return render(request,"employe/update_employe.html",{
-        'employe':employe
+        'employe':employe, 'isLogin': True
     })
 # Data Fetch for update employee
 def do_update_emp(request,employe_id):
@@ -160,7 +161,7 @@ def contact(request):
         
     else:
         form=ContactForm()
-    return render(request, "employe/contact.html",{'form':form})
+    return render(request, "employe/contact.html",{'form':form, 'isLogin': True})
 
 
 # Login View
