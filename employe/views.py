@@ -181,7 +181,7 @@ def loginUser(request):
 
             return redirect("/employe/home/")
     #return redirect("/register/")
-    return render(request, "auth/logintest.html",{'form':'helo'})
+    return render(request, "auth/login.html",{'form':'helo'})
 
 # User Registration
 def registerUser(request):
@@ -209,7 +209,7 @@ def logoutUser(request):
         user.islogin = False
         user.save()
         del request.session['userId']
-        messages.warning(request, 'You have signed out.')
+        messages.warning(request, 'Logout Successful. See you next time!.')
 
     return redirect("/login/")
     

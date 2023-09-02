@@ -167,7 +167,7 @@ i{
     background: transparent;
 }
 
-.login-heading{
+.login-heading, .register-heading{
     font-weight: 800;
 }
 
