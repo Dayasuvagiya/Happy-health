@@ -76,6 +76,8 @@ def delete_employe(request,employe_id):
     
     employe=Emp.objects.get(pk=employe_id)
     employe.delete()
+    messages.warning(request, 'Successfully deleted an employee details')
+
     return redirect("/employe/home/")
 
 # Update employe view
@@ -124,6 +126,7 @@ def do_update_emp(request,employe_id):
         else:
             e.working=True
         e.save()
+        messages.success(request, 'Successfully updated')
 
     return redirect("/employe/home/")
 
@@ -152,6 +155,7 @@ def contact(request):
         contact.message = message
 
         contact.save()
+        messages.success(request, 'Thank you for contact us!')
         return redirect("/employe/home/")
         
     else:
@@ -204,7 +208,7 @@ def logoutUser(request):
         user.islogin = False
         user.save()
         del request.session['userId']
-        messages.warning(request, 'Successfully logout')
+        messages.warning(request, 'You have signed out.')
 
     return redirect("/login/")
     
