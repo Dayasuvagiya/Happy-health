@@ -132,7 +132,15 @@ i{
 
 .image-custom{
     width: 80%;
-    height: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 35px;
+}
+
+.middle-image{
+    margin-right: 80px !important;
 }
 
 .custom{
@@ -176,11 +184,12 @@ i{
 
 /* About us page */
 
-.map-image{
-    width: 100%;
+.about-title{
+    margin-top: 30px;
+    margin-bottom: 50px;  
 }
 
-.mycolor{
-    color: black;
-    
+.map{
+    margin-top:60px;
+    margin-bottom: 30px;
 }
