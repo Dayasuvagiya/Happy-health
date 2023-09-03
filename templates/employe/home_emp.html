@@ -35,9 +35,9 @@
                                     <td>{{e.address}}</td>
                                     <td>
                                         <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                                            Delete
+                                            Delete1
                                           </button>
-                                        <!-- <a href="/employe/delete-employe/{{e.id}}" class="btn btn-danger btn-sm" data-bs-target="#exampleModal">Delete</a> -->
+                                         <a href="/employe/delete-employe/{{e.id}}" class="btn btn-danger btn-sm" data-bs-target="#exampleModal">Delete</a>
                                         <a href="/employe/update-employe/{{e.id}}" class="btn btn-warning btn-sm">Update</a>
                                     </td>
                                 </tr>
@@ -54,7 +54,6 @@
                                         <div class="modal-footer">
                                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                           <button type="button" class="btn btn-danger" onclick="location.href='/employe/delete-employe/{{e.id}}'">Delete</button>
-
                                         </div>
                                       </div>
                                     </div>

@@ -92,7 +92,7 @@ def delete_employe(request,employe_id):
     if user.islogin is False:
         return redirect("/login/")
     
-    employe=Emp.objects.get(pk=employe_id)
+    employe=Emp.objects.get(id=employe_id)
     employe.delete()
     messages.warning(request, 'Successfully deleted an employee details')
 
@@ -147,7 +147,6 @@ def do_update_emp(request,employe_id):
             e.working=True
         e.save()
         messages.success(request, 'Successfully Updated')
-
     return redirect("/employe/home/")
 
 # Contact view
@@ -174,7 +173,7 @@ def contact(request):
         contact.message = message
 
         contact.save()
-        messages.success(request, 'Thank you for contact us!')
+        messages.success(request, 'Thank you for contacting us!')
         return redirect("/employe/home/")
         
     else:

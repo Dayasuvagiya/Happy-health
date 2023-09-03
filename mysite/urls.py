@@ -22,8 +22,8 @@ from employe.views import loginUser, registerUser, logoutUser
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", views.index, name="home"),
-    path("index/", views.index, name="home"),
+    path("", views.index, name="index"),
+    path("index/", views.index, name="index"),
     path("about/", views.about, name="about"),
 
     path("employe/", include('employe.urls')),
