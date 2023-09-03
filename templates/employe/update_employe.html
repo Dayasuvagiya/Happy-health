@@ -4,88 +4,60 @@
 {% block content %}
 
 <!--Form to update employee-->
-    <h1 class="text-center my-3">Update Employee</h1>
-    <div class="container my-5">
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
-          <div class="card bg-light">
-            <div class="card-body">
-              <form action="/employe/do-update-emp/{{employe.id}}" method="POST">
-                {% csrf_token %}
-                <div class="mb-3">
-                  <label for="name">Employee Name</label>
-                  <input 
-                    id="name"
-                    type="text" 
-                    class="form-control" 
-                    placeholder="Enter employee name"
-                    name="employee_name"
-                    value="{{employe.name}}"
-                  />
-                </div>
-
-                <div class="mb-3">
-                  <label for="id">Employee ID</label>
-                  <input 
-                    id="id" 
-                    type="text" 
-                    class="form-control" 
-                    placeholder="Enter employee Id"
-                    name="employee_id"
-                    value="{{employe.emp_id}}"
-                  />
-                </div>
-
-                <div class="mb-3">
-                  <label for="phone">Phone</label>
-                  <input 
-                    id="phone" 
-                    type="text" 
-                    class="form-control" 
-                    placeholder="Enter employee Phone"
-                    name="employee_phone"
-                    value="{{employe.phone}}"
-                  />
-                </div>
-
-                <div class="mb-3">
-                  <label for="address">Employee Address</label>
-                  <textarea 
-                    name="employee_address" 
-                    id="address" 
-                    rows="5" 
-                    class="form-control">{{employe.address}}</textarea>
-                </div>
-
-                <div class="mb-3 form-check">
-                  <label for="work">Working</label>
-                  <input 
-                    type="checkbox" 
-                    {% if employe.working%}
-                    checked
-                    {% endif %}
-                    id="work" 
-                    class="form-check-input"
-                    name="employee_working"
-                  />
-                </div>
-
-                <div class="mb-3">
-                  <label for="department">Departments</label>
-                  <select value="{{employe.department}}" name="employee_department" id="department" class="form-control">
-                    <option value="se">Software Development</option>
-                    <option value="hr">HR Manager</option>
-                    <option value="dm">Digital Marketing</option>
-                  </select>
-                </div>
-                <div class="container text-center">
-                  <button class="btn btn-dark my-2">Update Employee</button>
-                </div>
-              </form>
+<h1 class="text-center my-3">Update Employee</h1>
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card bg-light">
+        <div class="card-body">
+          <form action="/employe/do-update-emp/{{employe.id}}" method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="name">Employee Name</label>
+              <input id="name" type="text" class="form-control" placeholder="Enter employee name" name="employee_name"
+                value="{{employe.name}}" />
             </div>
-          </div>
+
+            <div class="mb-3">
+              <label for="id">Employee ID</label>
+              <input id="id" type="text" class="form-control" placeholder="Enter employee Id" name="employee_id"
+                value="{{employe.emp_id}}" />
+            </div>
+
+            <div class="mb-3">
+              <label for="phone">Phone</label>
+              <input id="phone" type="text" class="form-control" placeholder="Enter employee Phone"
+                name="employee_phone" value="{{employe.phone}}" />
+            </div>
+
+            <div class="mb-3">
+              <label for="address">Employee Address</label>
+              <textarea name="employee_address" id="address" rows="5"
+                class="form-control">{{employe.address}}</textarea>
+            </div>
+
+            <div class="mb-3 form-check">
+              <label for="work">Working</label>
+              <input type="checkbox" {% if employe.working%} checked {% endif %} id="work" class="form-check-input"
+                name="employee_working" />
+            </div>
+
+            <div class="mb-3">
+              <label for="department">Departments</label>
+              <select value="{{employe.department}}" name="employee_department" id="department" class="form-control">
+                <option value="se">Software Development</option>
+                <option value="hr">HR Manager</option>
+                <option value="dm">Digital Marketing</option>
+              </select>
+            </div>
+            <div class="container text-center">
+              <button class="btn btn-dark my-2">Update Employee</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
 {%endblock%}

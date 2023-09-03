@@ -2,46 +2,46 @@
 {% load static %}
 
 {% block content %}
-
-    <h1 class="text-center my-3">Employee Management</h1>
-    <h1 class="text-center my-3">List of employee</h1>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-body col-sm-12">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>#SNO.</th>
-                                    <th>Name</th>
-                                    <th>EMP ID</th>
-                                    <th>PHONE</th>
-                                    <th>WORKING</th>
-                                    <th>DEPARTMENT</th>
-                                    <th>ADDRESS</th>
-                                    <th>ACTION</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for e in emps %}
-                                <tr>
-                                    <td>{{forloop.counter}}</td>
-                                    <td>{{e.name}}</td>
-                                    <td>{{e.emp_id}}</td>
-                                    <td>{{e.phone}}</td>
-                                    <td>{{e.working}}</td>
-                                    <td>{{e.department}}</td>
-                                    <td>{{e.address}}</td>
-                                    <td>
-                                        <!--<button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal">
+<!--List of employee page-->
+<h1 class="text-center my-3">List of employee</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body col-sm-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>#SNO.</th>
+                <th>Name</th>
+                <th>EMP ID</th>
+                <th>PHONE</th>
+                <th>WORKING</th>
+                <th>DEPARTMENT</th>
+                <th>ADDRESS</th>
+                <th>ACTION</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for e in emps %}
+              <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{e.name}}</td>
+                <td>{{e.emp_id}}</td>
+                <td>{{e.phone}}</td>
+                <td>{{e.working}}</td>
+                <td>{{e.department}}</td>
+                <td>{{e.address}}</td>
+                <td>
+                  <!--<button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal">
                                             Delete1
                                           </button>-->
-                                         <a href="/employe/delete-employe/{{e.id}}" class="btn btn-danger btn-sm" data-bs-target="#exampleModal">Delete</a>
-                                        <a href="/employe/update-employe/{{e.id}}" class="btn btn-warning btn-sm">Update</a>
-                                    </td>
-                                </tr>
-                                <!--<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <a href="/employe/delete-employe/{{e.id}}" class="btn btn-danger btn-sm"
+                    data-bs-target="#exampleModal">Delete</a>
+                  <a href="/employe/update-employe/{{e.id}}" class="btn btn-warning btn-sm">Update</a>
+                </td>
+              </tr>
+              <!--<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                       <div class="modal-content">
                                         <div class="modal-header">
@@ -58,18 +58,17 @@
                                       </div>
                                     </div>
                                   </div>-->
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+              {% endfor %}
+            </tbody>
+          </table>
         </div>
-        <div class="d-grid col-4 mx-auto mt-4">
-            <a class="btn btn-dark my-5" href="/employe/add_employe/" role="button">
-                Add New Employee</a>
-        </div>
-
+      </div>
     </div>
+  </div>
+  <div class="d-grid col-4 mx-auto mt-4">
+    <a class="btn btn-dark my-5" href="/employe/add_employe/" role="button">
+      Add New Employee</a>
+  </div>
+</div>
 
 {%endblock%}

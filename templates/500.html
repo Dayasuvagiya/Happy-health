@@ -1,14 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
+<!--500 error page-->
 <main class="d-flex account-body">
     <div class="container-fluid fof d-flex flex-column align-items-center m-auto">
-        <h1 class=" h1 text-danger font-weight-bold pb-3 display-1 "> 500</h1>
+        <h1 class=" h1 text-danger font-weight-bold pb-3 display-1 ">500</h1>
         <h2 class="h2 text-dark font-weight-bold pb-3 display-3 text-center">Internal Server Error</h2>
         <a href="{% url 'home' %}" class="btn btn-dark active pl-5 pr-5 mb-5">Go Back to Home</a>
     </div>
 </main>
-
-
 {% endblock %}
