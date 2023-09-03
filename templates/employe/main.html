@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div>
+        <div class="col">
+            <img src="{% static 'images/main_page.jpeg' %}" class="main_image" alt="home-page"> 
+        </div>
+    </div>
+
+    <section class="py-5">
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <h2 class="mb-3">Are you ready?</h2>
+                    <p>Elevate your workforce management with our employee empowerment platform. Streamline HR operations and boost productivity today!</p>
+                    <p class="mb-0">Say goodbye to manual paperwork and administrative hassles. Our platform automates key HR processes, to save employee Information. This allows HR teams to focus on strategic initiatives rather than routine tasks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Testimonial homepage-->
+    
+    <div class="testimonial">
+    <div class="container container-testi">
+        <div class="intro">
+            <h2 class="text-center">Feedback from HR Professionals </h2>
+            <p class="text-center">Discover how our employee management app is transforming HR practices, read what HR managers have to say about their experience!</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4 colum-testi">
+                <div class="card card-testi d-flex mx-auto">
+                    <div class="card-image">
+                        <img class="img-fluid d-flex mx-auto image-testimonial" src="https://i.imgur.com/3TlwnLF.jpg">
+                    </div>
+                    
+                    <div class="card-text card-text-testi">
+                        <div class="card-title card-title-testi">Micheal Smith</div>
+                        The employee details saving feature in this app is a lifesaver. It simplifies the way we manage employee records by providing an organized and easily accessible platform. The app has made it effortless to maintain accurate records.
+                    </div>
+                    <div class="footer-testi">
+                        <span id="name-testi">HR manager<br></span>
+                        <span id="position">InnovateTech Solutions
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 colum-testi">
+                <div class="card card-testi d-flex mx-auto">
+                    <div class="card-image">
+                        <img class="img-fluid d-flex mx-auto image-testimonial" src="https://i.imgur.com/Uz4FjGZ.jpg">
+                    </div>
+                    <div class="card-text card-text-testi">
+                        <div class="card-title card-title-testi">Angellia Miller</div>
+                        This app has proven to be an efficient and user-friendly solution for employee details management. Our HR team now has a centralized hub where we can input and update information like employee codes, departments, and working statuses.
+                    </div>
+                    <div class="footer-testi">
+                        <span id="name-testi">HR Manager<br></span>
+                        <span id="position">Global Dynamics Inc.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 colum-testi">
+                <div class="card card-testi d-flex mx-auto ">
+                    <div class="card-image">
+                        <img class="img-fluid d-flex mx-auto image-testimonial" src="https://i.imgur.com/udGH5tO.jpg">
+                    </div>
+                    <div class="card-text card-text-testi">
+                        <div class="card-title card-title-testi">Christina Williams</div>
+                        We've found the employee details storage feature of this app to be reliable and secure. Storing sensitive information such as employee names, contact numbers, and current employment status is a crucial aspect of HR management. 
+                    </div>
+                    <div class="footer-testi">
+                        <span id="name-testi">HR Manager<br></span>
+                        <span id="position">LinkCo Enterprises</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Custom section-->
+    <section class="custom">
+        <div class="container custom-container mt-2 mb-1">
+            <div class="row">
+                <div class="col-sm-6 custom-content">
+                    <h2>Unlock Tailored Solutions with Our Customization Offer</h2>
+                    <p class="lead">With our Customization Offer, you gain the power to customize workflows, forms, and features within the app. We'll work closely with your HR team to identify pain points, streamline processes, and integrate the functionalities that matter most to your organization.
+                    </p>
+                    <p class="lead">Join us in transforming your HR operations and creating a more engaged and productive workforce.
+                    </p>
+                </div>
+              
+                <div class="col-sm-6 custom-content">
+                        <img src="{% static 'images/custom_image.png' %}" class="image-custom" alt="home-page"> 
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+{%endblock%}

@@ -19,8 +19,11 @@ def index(request):
 
 # About page view
 def about(request):
-    print=("<h1>This is about page</h1>")
     return render(request,"about.html",{})
+
+def main(request):
+    return render(request,"employe/main.html",{'isLogin': True})
+
 
 # employee home page view
 def employe_home(request):
@@ -195,7 +198,7 @@ def loginUser(request):
                 request.session['userId'] = user.id
                 messages.success(request, 'You have logged in successfully')
 
-            return redirect("/employe/home/")
+            return redirect("/employe/main/")
     return render(request, "auth/login.html",{'form':'helo'})
 
 # User Registration
