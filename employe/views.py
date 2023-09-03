@@ -4,6 +4,7 @@ from .models import Emp,Userlogin,Contactus
 from .form import ContactForm
 from django.core.exceptions import PermissionDenied
 from django.contrib import messages
+import re
 
 
 # Index page view
@@ -62,6 +63,11 @@ def add_employe(request):
         employee_address=request.POST.get("employee_address")
         employee_working=request.POST.get("employee_working")
         employee_department=request.POST.get("employee_department")
+
+        # Phone number validation
+        if not re.match(r'^\+?1?\d{9,15}$', employee_phone):
+            messages.error(request, 'Please enter a valid digit in the phone field.')
+            return redirect("/employe/add_employe/")
 
         # Create model object and set data
         e=Emp()
@@ -177,7 +183,7 @@ def contact(request):
 
         contact.save()
         messages.success(request, 'Thank you for contacting us!')
-        return redirect("/employe/home/")
+        return redirect("/employe/main/")
         
     else:
         form=ContactForm()

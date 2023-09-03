@@ -4,10 +4,10 @@ from django.db import models
 class Emp(models.Model):
     name=models.CharField(max_length=200)
     emp_id=models.CharField(max_length=200)
-    phone=models.BigIntegerField()
+    phone=models.BigIntegerField(blank=True)
     address=models.CharField(max_length=200)
     working=models.BooleanField(default=True)
-    department=models.CharField(max_length=20)
+    department=models.CharField(max_length=200)
 
     def __str__(self):
         return self.name
@@ -27,7 +27,7 @@ class Userlogin(models.Model):
 class Contactus(models.Model):
     name=models.CharField(max_length=200)
     email=models.EmailField(blank=False)
-    message=models.CharField(max_length=20)
+    message=models.CharField(max_length=300)
     
 
     def __str__(self):
