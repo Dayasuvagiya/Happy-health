@@ -22,6 +22,7 @@
   <!-- Minified CSS -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+
 <body>
 
   {% include 'navbar.html' %}
@@ -48,12 +49,15 @@
   </main>
 
   {% include 'footer.html' %}
-<!--Javascript to remove messages-->
+  <!--Javascript to remove messages-->
+  <!--Javascript to remove messages-->
   <script>
     setTimeout(function () {
       let messages = document.getElementById('msg');
-      let alert = new bootstrap.Alert(messages);
-      alert.close();
+      if (messages) {
+        let alert = new bootstrap.Alert(messages);
+        alert.close();
+      }
     }, 3000);
   </script>
 
@@ -66,4 +70,5 @@
   <script src="https://kit.fontawesome.com/670bc76ec2.js" crossorigin="anonymous"></script>
 
 </body>
+
 </html>
