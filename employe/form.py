@@ -8,9 +8,9 @@ phone_regex = RegexValidator(
 )
 
 class ContactForm(forms.Form):
-    name=forms.CharField(label="Enter your name", max_length=100)
-    email=forms.EmailField(label="Enter your Email", max_length=100)
-    message=forms.CharField(label="Message", widget=forms.Textarea)
+    name = forms.CharField(label="Enter your name", max_length=100)
+    email = forms.EmailField(label="Enter your Email", max_length=100)
+    message = forms.CharField(label="Message", widget=forms.Textarea)
 
 
     def __init__(self, *args, **kwargs):
