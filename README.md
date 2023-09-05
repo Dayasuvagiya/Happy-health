@@ -370,6 +370,16 @@ Google fonts were used for this project as it offers clean and legible design, w
 
 Added simple footer to the website, including links to our social media profiles.
 
+### Admin Page
+
+![Admin Employee Details](documentation/images/admin_emp.png)
+
+![Admin User Login Details ](documentation/images/user_login.png)
+
+![Admin Contact](documentation/images/admin_contact.png)
+- The Contact form submissions are saved to the admin panel. The name, email and message from the contact form is shown to the admin, to allow them to reply to the User easily.
+
+
 [Back to Top](#table-of-contents)
 
 <br>
@@ -377,3 +387,135 @@ Added simple footer to the website, including links to our social media profiles
 ## Future Features
 
 - I have plans to enhance the website with improved features for registered users. Currently, there's no option to reset passwords or update email addresses. Additionally, I had intended to create individual employee cards with CRUD functionality and images, but time constraints have delayed this feature implementation on the already extensive project.
+
+# Testing 
+### Validator Testing 
+
+- HTML
+  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/)
+  - The only warnings that were given were because of the nature of Django Template Syntax.
+- CSS
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/)
+- Python
+  - No errors were returned when passing through [CI Python Linter](https://pep8ci.herokuapp.com/)
+  - The only error is showing for long line
+
+### Lighthouse Testing
+![Lighthouse Metrics](documentation/images/lighthouse.png)
+  - Testing on Desktop has given a variety of scores, going from a score between 85 and 98 for Performance and a score between 83 to 92 for Best Practices. The last tests before submissions are posted below.
+  - When tested on desktop, the website score 98 on performance.
+  - An accessibility score is 96
+  - The best practices score is 92 and SEO score is 100
+
+<br>
+
+ [Back to Top](#table-of-contents)
+
+<br>
+
+### Automated Testing
+
+- I wrote some tests for the app, covering view.py, model.py, and form.py. However, the tests aren't as thorough as I'd prefer, mainly because I faced challenges in grasping how to write tests for specific aspects of my forms and views. Nevertheless, I acknowledge the significance of comprehensive testing within a project and intend to delve deeper into this area in the future, as I recognize its value.
+
+### Manual Testing
+- Manual testing has been done extensively and has been shown in separate file, located [here.](documentation/test.md)
+
+### Other Testing
+ - The website has been tested across various screen sizes, using the Chrome DevTools responsive device section, [Responsive Design Checker](https://responsivedesignchecker.com/) and by opening the website on Firefox, Chrome, 3 various sized Android phones.
+
+<br>
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+# Bugs
+
+#### Issue: Validation for adding phone number
+
+##### Fix:
+
+ - I previously addressed an issue where users were encountering errors when entering letters or non-numeric characters as phone numbers. To resolve this, I implemented an if statement that now prompts users to input a valid phone digit when non-numeric characters are detected, providing a more user-friendly experience.
+ - I took support from slack family and google to resolve this issue.
+ 
+
+#### Issue: login, registration
+
+ - Previously, users were able to freely add, delete, and update data without the need for logging in or registering.
+
+##### Fix:
+
+ - I have now implemented a security measure. If a user attempts to access the data by copying and pasting the URL without being logged in or signed up, they will be automatically redirected to the login page. After successfully logging in, they will gain the necessary access to modify or add information.
+
+
+# Bugs Not Fixed
+
+#### Issue: User Personal profile
+
+I developed the login and registration functionalities in my Django project without utilizing the Allauth library. Initially, I embarked on this path to deepen my understanding of Django's native methods. However, during the project's course, I encountered an issue where user registration resulted in data from another user being saved unintentionally. This occurred due to the absence of individual admin panels for users within my app.
+
+To address this issue effectively, I would need to either implement the Allauth method or establish a more robust connection between user data and the database. However, given time constraints, I decided to leave the issue as is, with the intention of revisiting it in the future to implement a lasting solution. I recognize the importance of ensuring data integrity and individual user experiences and remain committed to addressing this concern comprehensively in due course.
+
+<br>
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+# Credits and Sources
+
+### Employee menagement app
+- The Employee management app was based on reading and watching multiple walkthroughs of Django functionality.
+- [Code Institute](https://learn.codeinstitute.net/)
+- [Django](https://www.djangoproject.com/)
+- [Youtube](https://www.youtube.com/)
+- [Stackoverflow](https://stackoverflow.com/)
+- [Freecodecamp](https://www.freecodecamp.org/news/tag/programming/)
+- Mentor sessions have proven to be invaluable in aiding me and resolving any queries I encounter.
+
+# Deployment
+
+The following are the steps I went through to deploy my live site:
+
+- The site was deployed using Heroku. The steps to deploy are as follows: 
+1. Go to [Heroku](https://dashboard.heroku.com/apps)
+2. Go to 'New' and select 'Create a new app'
+3. Input your app name and create app.
+4. Navigate to 'Settings'
+5. On the Config Vars section, enter the following values:
+    - SECRET_KEY: The Secret Key for your project
+    - DATABASE_URL: The URL from your ElephantSQL dashboard
+    - CLOUNDINARY_URL: The URL from your Cloudinary dashboard
+    - PORT: 8000
+6. Navigate to the 'Deploy' section. 
+7. Connect to GitHub, search for your repo and confirm. 
+8. Choose branch to deploy.
+9. Your app should now be available to see. You can choose whether to have your app automatically redeploy with every push or to keep it manual. 
+
+- To Fork the repository:
+  - On GitHub.com, navigate to the repository.
+  - In the top-right corner of the page, click Fork.
+  - Select an owner for the forked repository.
+  - By default, forks are named the same as their parent repositories. You can change the name of the fork to distinguish it further.
+  - Optionally, add a description of your fork.
+  - Choose whether to copy only the default branch or all branches to the new fork.
+  - Click Create fork.
+
+- To Clone the repository:
+  - On GitHub.com, navigate to the repository.
+  - Above the list of files, click the Code button.
+  - Copy the URL for the repository.
+  - Open Git Bash.
+  - Change the current working directory to the location where you want the cloned directory.
+  - Type git clone, and then paste the URL you copied earlier.
+  - Press Enter. Your local clone will be created.
+ 
+ <br>
+
+Live link: [Kyros](https://kyros-emp-mgt-c05d2ad42403.herokuapp.com/)
+
+<br>
+
+<br>
+
+[Back to Top](#table-of-contents)
