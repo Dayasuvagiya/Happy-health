@@ -37,18 +37,18 @@ Welcome to Kyros! This website has been built using Django, incorporating custom
     * [Fonts](#fonts)
 7. [Project Structure](#project-structure)
     * [Features](#features)
-    * [Home Page](#home-page)
-    * [About Page](#about-page)
-    * [Register Pages](#register-page)
-    * [Login page](#login-page)
-    * [Add Employee Page](#add-employee-page)
-    * [List Of Employee Page](#list-of-employee-page)
-    * [Update Page](#update-page)
-    * [Contact Page](#contact-page)
-    * [Logout](#logout)
-    * [Navbar](#navbar)
-    * [Footer](#footer)
-
+        * [Home Page](#home-page)
+        * [About Page](#about-page)
+        * [Register Pages](#register-page)
+        * [Login page](#login-page)
+        * [Add Employee Page](#add-employee-page)
+        * [List Of Employee Page](#list-of-employee-page)
+        * [Update Page](#update-page)
+        * [Contact Page](#contact-page)
+        * [Logout](#logout)
+        * [Navbar](#navbar)
+        * [Footer](#footer)
+    [Future Features](#feature-features)
 
 
 
@@ -316,19 +316,19 @@ Google fonts were used for this project as it offers clean and legible design, w
 
 ### Add Employee Page
 
-![Add Employee Page](documentation/images/.add_emp.png)
+![Add Employee Page](documentation/images/add_emp.png)
 
 - "Add Employee" page is designed to facilitate the inclusion of new employees' information into system. This page typically allows HR professionals or authorized personnel to input essential details about a new employee, such as their name, ID, contact information, department, and current employment status. 
 
 ### List Of Employee Page
 
-![List of Employee Page](documentation/images/.list_emp.png)
+![List of Employee Page](documentation/images/list_emp.png)
 
 - "List of Employee" page offers a concise, organized view of all employees' essential details, simplifying workforce management and access to crucial employee information.
 
 ### Update Page
 
-![update Employee Page](documentation/images/update.png)
+![update Employee Page](documentation/images/update_emp.png)
 
 - The "Update" page in the app allows authorized users to modify or edit existing employee information, ensuring that employee records remain accurate and up-to-date.
 
@@ -369,3 +369,11 @@ Google fonts were used for this project as it offers clean and legible design, w
 ![Footer](documentation/images/footer.png)
 
 Added simple footer to the website, including links to our social media profiles.
+
+[Back to Top](#table-of-contents)
+
+<br>
+
+## Future Features
+
+- I have plans to enhance the website with improved features for registered users. Currently, there's no option to reset passwords or update email addresses. Additionally, I had intended to create individual employee cards with CRUD functionality and images, but time constraints have delayed this feature implementation on the already extensive project.

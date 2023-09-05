@@ -94,12 +94,12 @@ p {
     font-family: 'Varela Round';
 }
 
-#name-testi{
+.name-testi{
     font-size: 0.8rem;
     font-weight: bold;
 }
 
-#position{
+.position{
     font-size: 0.7rem;
 }
 
@@ -221,6 +221,4 @@ i{
     overflow-x: auto;
 }
 
-.table-main table{
-    width:auto;
-}
+

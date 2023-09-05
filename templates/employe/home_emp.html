@@ -8,7 +8,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class="card">
-        <div class="card-body col-md-9 table-main">
+        <div class="card-body table-main">
           <table class="table">
             <thead class="thead-dark">
               <tr>
@@ -23,7 +23,7 @@
               </tr>
             </thead>
             <tbody>
-              {% for e in emps %}
+            {% for e in emps %}
               <tr>
                 <td>{{forloop.counter}}</td>
                 <td>{{e.name}}</td>
@@ -58,7 +58,7 @@
                                       </div>
                                     </div>
                                   </div>-->
-              {% endfor %}
+            {% endfor %}
             </tbody>
           </table>
         </div>
