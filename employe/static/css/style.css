@@ -214,3 +214,13 @@ i{
     margin-top:60px;
     margin-bottom: 30px;
 }
+
+/* List of employe page */
+
+.table-main{
+    overflow-x: auto;
+}
+
+.table-main table{
+    width:auto;
+}
