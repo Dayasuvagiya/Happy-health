@@ -129,7 +129,7 @@ The Project board (documentation/images/agile2.png)
 
 > Create database models in project app and migrate them.
 > Create and Migrate Database.
-  - For Booking, the database model has everything needed to add new employe and details.
+  - The database model has everything needed to add new employee and details.
   - For Home, a database model was created for the contact form.
 
 ### Employee App
