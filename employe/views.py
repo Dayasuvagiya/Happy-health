@@ -5,6 +5,7 @@ from .form import ContactForm
 from django.core.exceptions import PermissionDenied
 from django.contrib import messages
 import re
+from django.db.models import Q 
 
 
 # Index page view
@@ -72,7 +73,8 @@ def add_employe(request):
 
         # Phone number validation
         if not re.match(r'^\+?1?\d{9,15}$', employee_phone):
-            messages.error(request, 'Please enter a valid digit in the phone field.')
+            messages.error(
+                request, 'Please enter a valid digit in the phone field.')
             return redirect("/employe/add_employe/")
 
         # Create model object and set data
@@ -200,7 +202,8 @@ def contact(request):
 
     else:
         form = ContactForm()
-    return render(request, "employe/contact.html", {'form':form, 'isLogin': True})
+    return render(
+        request, "employe/contact.html", {'form':form, 'isLogin': True})
 
 # Login View
 
@@ -209,8 +212,8 @@ def loginUser(request):
     if request.method == 'POST':
         username = request.POST.get("username")
         password = request.POST.get("password")
-        print("===========login======")
-        userQuerySet = Userlogin.objects.filter(username=username).filter(password=password)
+        userQuerySet = Userlogin.objects.filter(username=username).filter(
+            password=password)
         print(userQuerySet)
         if len(userQuerySet) > 0:
             for user in userQuerySet:
@@ -218,8 +221,10 @@ def loginUser(request):
                 user.save()
                 request.session['userId'] = user.id
                 messages.success(request, 'You have logged in successfully')
-
             return redirect("/employe/main/")
+        else:
+            # Add an error message for unsuccessful login
+            messages.error(request, 'Invalid username or password')
     return render(request, "auth/login.html", {'form':'helo'})
 
 # User Registration
@@ -231,15 +236,24 @@ def registerUser(request):
         password = request.POST.get("password")
         email = request.POST.get("email")
 
-        user = Userlogin()
-        user.username = username
-        user.password = password
-        user.email = email
-        user.islogin = False
+        # Check if username or email already exists
+        existing_user = Userlogin.objects.filter(Q(username=username) | Q(email=email)).first()
 
-        # Save the object
-        user.save()
-        return redirect("/login/")
+        if existing_user:
+            # User with the same username or email already exists
+            messages.error(request, 'Username or email already exists. Please use another.')
+        else:
+            user = Userlogin()
+            user.username = username
+            user.password = password
+            user.email = email
+            user.islogin = False
+
+            # Save the object
+            user.save()
+            messages.success(request, 'Successfully registered, Please login now!')
+            return redirect("/login/")
+
     return render(request, "auth/register.html", {'form': 'helo'})
 
 # logout

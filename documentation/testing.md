@@ -31,8 +31,11 @@ Feature Tested | Expected Result | Actual Result
 NavBar responsiveness | NavBar becomes hamburger menu on below mediam screen | As expected
 Images resize on mobile | Images resize on mobile | As expected
 Layout becomes linear on mobile | Layout becomes linear on mobile | As expected |
+On smaller screens, the list of employees is displayed horizontally | scroll through the list horizontally | As expected
 Form Buttons transparent coour on hover | Form Buttons transparent coour on hover | As expected
 Messages are displayed for user action | All messages shown as expected | As expected
+Invalid user-name or Password dispay error message | Message "Invalid username or password!" displays | As expected
+User Can't use existing userId or Email | Error message "Email id or name already exist, please use another" display | As Expected
 Footer links all work when clicked | Footer links all work when clicked | As expected
 Button on home page for users not logged in | button redirects to Register Page | As expected
 Other URLs without login | page redirects to login | As expected
@@ -41,6 +44,7 @@ Contact form saves to admin panel | admin panel shows message, name and email | 
 User gets feedback on contact form submission | Message "Thank you for connecting us!" displays | As expected
 Registration page validates each required input| message appear to fill the field | As expected
 Add employee, list of employee and contact links are hidden until a user is logged in | Only show when logged in | As expected
+List of employee page has option Add new employee | add employee page render | As expected
 User gets feedback message on Adding new employee confirmation | message "You added new employee successfully" displays | As expected
 Page redirects to list of employee | renders on list of employee page | As expected
 User added employee shown on list of employee page(home_emp.html) | User added employee shown on list of employee page | As expected
@@ -50,7 +54,8 @@ update button on update emp page redirects back to list of employee page | home_
 Delete button delete emoloyee details| delete emoloyee details | As expected
 Confirmation message on user_delete shows | message "Successfully deleted an employee details" shown | As expected
 User redirected to logout confirmation popup when Logout is clicked | Option to logout or close | As expected
-User redirected to Profile Logout is cancelled | Back to current page  | As expected
+User redirected to Profile Logout is cancelled | Back to current page | As expected
 User redirected to login page when logged out | login.html renderes | As expected
+User redirected to register with existing Email or Username | Instruct to add new | As expected
 User shown log out message feedback | message "Successfully signed out, see you next time!" shown | As expected
 User tried to render user_profile URL when not logged in | user redirected to log in page | As expected

@@ -2,7 +2,7 @@
 
 ![Website responsiveness on multiple screen sizes](documentation/images/kyros.png)
 
-Welcome to Kyros! This website has been built using Django, incorporating custom Python, HTML, and CSS elements. Our platform caters to both small and large organizations, providing a seamless and paperless solution for effortlessly inputting employee information. Users have the ability to create profiles, enabling them to efficiently manage and add employee details to their database.
+Welcome to Kyros! This website has been built using Django, incorporating custom Python, HTML, and CSS elements. Our platform caters to both small and large organizations, providing a seamless and paperless solution for effortlessly inputting employee information. Users have the ability Register and Login, enabling them to efficiently manage and add employee details to their database.
 
 [Live link to Kyros](https://kyros-emp-mgt-c05d2ad42403.herokuapp.com/)
 
@@ -56,7 +56,6 @@ Welcome to Kyros! This website has been built using Django, incorporating custom
        * [Other Testing](#other-testing)
 9.  [Bugs](#bugs)
     * [Bugs Found and Fixed](#bugs-found-and-fixed)
-    * [Bugs Not Fixed](#bugs-not-fixed)
 10. [Credits And Sources](#credits-and-sources)
 11. [Deployment](#deployment)
 
@@ -391,7 +390,12 @@ Added simple footer to the website, including links to our social media profiles
 
 ## Future Features
 
-- I have plans to enhance the website with improved features for registered users. Currently, there's no option to reset passwords or update email addresses. Additionally, I had intended to create individual employee cards with CRUD functionality and images, but time constraints have delayed this feature implementation on the already extensive project.
+1. I have plans to enhance the website with improved features for registered users. Currently, there's no option to reset passwords or update email addresses. Additionally, I had intended to create individual employee cards with CRUD functionality and images, but time constraints have delayed this feature implementation on the already extensive project.
+
+2. I developed the login and registration functionalities in my Django project without utilizing the Allauth library. Initially, I embarked on this path to deepen my understanding of Django's native methods. However, during the project's course, I encountered an issue where user registration resulted in data from another user being saved unintentionally. This occurred due to the absence of individual admin panels for users within my app.
+
+- To address this functionality effectively, I would need to either implement the Allauth method or establish a more robust connection between user data and the database. However, given time constraints, I decided to leave the issue as is, with the intention of revisiting it in the future to implement a lasting solution. I recognize the importance of ensuring data integrity and individual user experiences and remain committed to addressing this concern comprehensively in due course.
+
 
 # Testing 
 
@@ -408,19 +412,19 @@ Added simple footer to the website, including links to our social media profiles
 
 ### Lighthouse Testing
 
-![Lighthouse Metrics](documentation/images/lighthouse.png)
-  - Testing on Desktop has given a variety of scores, going from a score between 85 and 98 for Performance and a score between 83 to 92 for Best Practices. The last tests before submissions are posted below:
+![Lighthouse Metrics](documentation/images/lighthouse_ss.png)
+  The last tests before submissions are posted below:
   - When tested on desktop, the website score 98 on performance.
-  - An accessibility score is 96
+  - An accessibility score is 100
   - The best practices score is 92 and SEO score is 100
 
 ### Automated Testing
 
-- I wrote some tests for the app, covering view.py, model.py, and form.py. However, the tests aren't as thorough as I'd prefer, mainly because I faced challenges in grasping how to write tests for specific aspects of my forms and views. Nevertheless, I acknowledge the significance of comprehensive testing within a project and intend to delve deeper into this area in the future, as I recognize its value.
+- I wrote some tests for the app, covering view.py. However, the tests aren't as thorough as I'd prefer, mainly because I faced challenges in grasping how to write tests for specific aspects of my views. I have removed the testing code since it was not functioning correctly. I intend to delve deeper into this area in the future, as I recognize its value.
 
 ### Manual Testing
 
-- Manual testing has been done extensively and has been shown in separate file, located [here.](documentation/test.md)
+- Manual testing has been done extensively and has been shown in separate file, located [here.](documentation/testing.md)
 
 ### Other Testing
 
@@ -451,15 +455,6 @@ Added simple footer to the website, including links to our social media profiles
 ##### Fix:
 
  - I have now implemented a security measure. If a user attempts to access the data by copying and pasting the URL without being logged in or signed up, they will be automatically redirected to the login page. After successfully logging in, they will gain the necessary access to modify or add information.
-
-
-### Bugs Not Fixed
-
-#### Issue: User Personal profile
-
-I developed the login and registration functionalities in my Django project without utilizing the Allauth library. Initially, I embarked on this path to deepen my understanding of Django's native methods. However, during the project's course, I encountered an issue where user registration resulted in data from another user being saved unintentionally. This occurred due to the absence of individual admin panels for users within my app.
-
-To address this issue effectively, I would need to either implement the Allauth method or establish a more robust connection between user data and the database. However, given time constraints, I decided to leave the issue as is, with the intention of revisiting it in the future to implement a lasting solution. I recognize the importance of ensuring data integrity and individual user experiences and remain committed to addressing this concern comprehensively in due course.
 
 <br>
 
