@@ -11,7 +11,6 @@ Welcome to Kyros! This website has been built using Django, incorporating custom
 # Table of Contents
 
 1. [UX](#ux)
-
 2. [The Strategy Plane](#the-strategy-plane)
     * [Targeted Users](#targeted-users)
     * [Site Goals](#site-goals)
@@ -47,10 +46,19 @@ Welcome to Kyros! This website has been built using Django, incorporating custom
         * [Contact Page](#contact-page)
         * [Logout](#logout)
         * [Navbar](#navbar)
-        * [Footer](#footer)
+        * [Admin Page](#admin-page)
     [Future Features](#feature-features)
-
-
+8. [Testing](#testing)
+       * [Validation Testing](#validator-testing)
+       * [Lighthouse Testing](#lighthouse-testing)
+       * [Automated Testing](#automated-testing)
+       * [Manual Testing](#manual-testing)
+       * [Other Testing](#other-testing)
+9.  [Bugs](#bugs)
+    * [Bugs Found and Fixed](#bugs-found-and-fixed)
+    * [Bugs Not Fixed](#bugs-not-fixed)
+10. [Credits And Sources](#credits-and-sources)
+11. [Deployment](#deployment)
 
 
 # UX
@@ -159,7 +167,6 @@ An essential aspect of a website's success lies in its appearance and user-frien
 > Create custom error page templates for 404, 403 and 500 errors.
   - Add a custom 404 Page to show the user which error they encountered while keeping the base template and css of the website.
 
-
 ### Create Documentation
 
 > Create both a README.md file and a Testing.md file to show the process of creating the project
@@ -251,7 +258,6 @@ Web app is utilizing bootstrap inbuilt dark background, which looks professional
 
 Google fonts were used for this project as it offers clean and legible design, which makes it easy to read on screens of different sizes and resolutions. It has a neutral appearance and doesn't have any distracting features that can make it difficult to read.
 
-
 ## Project Structure
 
 # Features 
@@ -270,7 +276,6 @@ Google fonts were used for this project as it offers clean and legible design, w
 ![Testimonial Section](documentation/images/testimonial.png)
 
 - The index page is split into multiple sections, with the information easy to read and eye catching to a visitor.
-
 
 <br>
 
@@ -389,6 +394,7 @@ Added simple footer to the website, including links to our social media profiles
 - I have plans to enhance the website with improved features for registered users. Currently, there's no option to reset passwords or update email addresses. Additionally, I had intended to create individual employee cards with CRUD functionality and images, but time constraints have delayed this feature implementation on the already extensive project.
 
 # Testing 
+
 ### Validator Testing 
 
 - HTML
@@ -401,26 +407,23 @@ Added simple footer to the website, including links to our social media profiles
   - The only error is showing for long line
 
 ### Lighthouse Testing
+
 ![Lighthouse Metrics](documentation/images/lighthouse.png)
   - Testing on Desktop has given a variety of scores, going from a score between 85 and 98 for Performance and a score between 83 to 92 for Best Practices. The last tests before submissions are posted below.
   - When tested on desktop, the website score 98 on performance.
   - An accessibility score is 96
   - The best practices score is 92 and SEO score is 100
 
-<br>
-
- [Back to Top](#table-of-contents)
-
-<br>
-
 ### Automated Testing
 
 - I wrote some tests for the app, covering view.py, model.py, and form.py. However, the tests aren't as thorough as I'd prefer, mainly because I faced challenges in grasping how to write tests for specific aspects of my forms and views. Nevertheless, I acknowledge the significance of comprehensive testing within a project and intend to delve deeper into this area in the future, as I recognize its value.
 
 ### Manual Testing
+
 - Manual testing has been done extensively and has been shown in separate file, located [here.](documentation/test.md)
 
 ### Other Testing
+
  - The website has been tested across various screen sizes, using the Chrome DevTools responsive device section, [Responsive Design Checker](https://responsivedesignchecker.com/) and by opening the website on Firefox, Chrome, 3 various sized Android phones.
 
 <br>
@@ -430,6 +433,8 @@ Added simple footer to the website, including links to our social media profiles
 <br>
 
 # Bugs
+
+### Bugs Found and Fixed 
 
 #### Issue: Validation for adding phone number
 
@@ -448,7 +453,7 @@ Added simple footer to the website, including links to our social media profiles
  - I have now implemented a security measure. If a user attempts to access the data by copying and pasting the URL without being logged in or signed up, they will be automatically redirected to the login page. After successfully logging in, they will gain the necessary access to modify or add information.
 
 
-# Bugs Not Fixed
+### Bugs Not Fixed
 
 #### Issue: User Personal profile
 
