@@ -409,7 +409,7 @@ Added simple footer to the website, including links to our social media profiles
 ### Lighthouse Testing
 
 ![Lighthouse Metrics](documentation/images/lighthouse.png)
-  - Testing on Desktop has given a variety of scores, going from a score between 85 and 98 for Performance and a score between 83 to 92 for Best Practices. The last tests before submissions are posted below.
+  - Testing on Desktop has given a variety of scores, going from a score between 85 and 98 for Performance and a score between 83 to 92 for Best Practices. The last tests before submissions are posted below:
   - When tested on desktop, the website score 98 on performance.
   - An accessibility score is 96
   - The best practices score is 92 and SEO score is 100
